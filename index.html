@@ -54,6 +54,7 @@
           </button>
         </div>
         <div class="text-sm">Network: BNB Smart Chain (chainId 56)</div>
+        <div class="text-sm"><a id="bscLink" class="underline text-[#FFD700] hover:no-underline" target="_blank" rel="noopener">View on BscScan</a></div>
       </div>
     </div>
   </section>
@@ -74,7 +75,6 @@
         <li>Standard: BEP-20</li>
         <li>Decimals: 18</li>
         <li>Network: BSC (56)</li>
-        <li><a id="bscLink" class="underline hover:no-underline text-[#FFD700]" target="_blank" rel="noopener">View on BscScan</a></li>
       </ul>
     </div>
   </section>
@@ -126,10 +126,41 @@
     </div>
   </section>
 
-  <!-- Whitepaper -->
+  <!-- Whitepaper (as text) -->
   <section id="whitepaper" class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-semibold mb-4 text-[#FFD700]">Whitepaper</h2>
-    <iframe src="Whitepaper.pdf" class="w-full h-[600px] rounded-xl border border-[#FFD700] bg-white"></iframe>
+    <h2 class="text-2xl font-semibold mb-6 text-[#FFD700]">Whitepaper</h2>
+    <div class="space-y-6 text-[#D6D6D6] leading-relaxed">
+      <p><strong>Introduction.</strong> AUREX is a community-driven cryptocurrency project built on the BNB Smart Chain (BEP-20).
+      Our mission is to create a transparent and secure ecosystem, giving the community meaningful influence over the project’s direction.</p>
+
+      <p><strong>Problem Statement.</strong> Many crypto projects lack transparency, include hidden fees, and fail to build sustainable communities.
+      This leads to uncertainty and mistrust among investors.</p>
+
+      <p><strong>Solution.</strong> AUREX addresses these issues with fair tokenomics, clear communication, and a community-governed approach.
+      The project is designed for long-term sustainability and adaptability.</p>
+
+      <div>
+        <p class="font-semibold text-[#FFD700]">Tokenomics</p>
+        <ul class="list-disc ml-6">
+          <li>Total Supply: 1,000,000 AUREX</li>
+          <li>Buy Tax: 0%</li>
+          <li>Sell Tax: 0%</li>
+          <li>Network: BNB Smart Chain (BEP-20)</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-semibold text-[#FFD700]">Roadmap</p>
+        <ol class="list-decimal ml-6">
+          <li><strong>Phase 1:</strong> Token launch and PancakeSwap listing.</li>
+          <li><strong>Phase 2:</strong> Marketing campaigns, CoinGecko & CMC listings, community growth.</li>
+          <li><strong>Phase 3:</strong> Partnerships and additional exchange listings.</li>
+        </ol>
+      </div>
+
+      <p><strong>Legal Disclaimer.</strong> The AUREX token is a community experiment and should not be considered financial advice.
+      Cryptocurrency investments are inherently risky — always do your own research (DYOR).</p>
+    </div>
   </section>
 
   <!-- Links -->
@@ -149,23 +180,49 @@
 
   <script>
     async function loadConfig() {
-      const res = await fetch('config.json', { cache: 'no-cache' });
-      const cfg = await res.json();
+      try {
+        const res = await fetch('config.json', { cache: 'no-cache' });
+        const cfg = await res.json();
 
-      // DEX links
-      document.getElementById('buyBtn').onclick = () => window.open(cfg.dex.pancakeSwapBuy, '_blank');
-      document.getElementById('buyLink').href = cfg.dex.pancakeSwapBuy;
-      document.getElementById('dexTools').href = cfg.dex.dextoolsPair;
-      document.getElementById('bscLink').href = cfg.token.explorer;
+        // DEX links
+        const buyBtn = document.getElementById('buyBtn');
+        const buyLink = document.getElementById('buyLink');
+        const dexTools = document.getElementById('dexTools');
 
-      // Social links
-      document.getElementById('telegram').href = cfg.socials.telegram;
-      document.getElementById('facebook').href = cfg.socials.facebook;
-      document.getElementById('website').href = cfg.socials.website;
+        if (cfg?.dex?.pancakeSwapBuy) {
+          buyBtn.onclick = () => window.open(cfg.dex.pancakeSwapBuy, '_blank');
+          buyLink.href = cfg.dex.pancakeSwapBuy;
+        }
+        if (cfg?.dex?.dextoolsPair) {
+          dexTools.href = cfg.dex.dextoolsPair;
+        }
 
-      // Contract address + copy
-      document.getElementById('contractAddress').textContent = cfg.token.address;
-      document.getElementById('copyAddress').onclick = () => navigator.clipboard.writeText(cfg.token.address);
+        // Explorer link
+        const bscLink = document.getElementById('bscLink');
+        if (cfg?.token?.explorer) {
+          bscLink.href = cfg.token.explorer;
+        }
+
+        // Social links (hide if missing)
+        const socialMap = {
+          telegram: document.getElementById('telegram'),
+          facebook: document.getElementById('facebook'),
+          website: document.getElementById('website')
+        };
+
+        Object.entries(socialMap).forEach(([key, el]) => {
+          const url = cfg?.socials?.[key];
+          if (url && el) el.href = url;
+          else if (el) el.style.display = 'none';
+        });
+
+        // Contract address + copy
+        const addr = cfg?.token?.address ?? '';
+        document.getElementById('contractAddress').textContent = addr;
+        document.getElementById('copyAddress').onclick = () => navigator.clipboard.writeText(addr);
+      } catch (e) {
+        console.error('Failed to load config.json', e);
+      }
     }
     loadConfig();
   </script>
