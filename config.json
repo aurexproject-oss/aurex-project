@@ -1,0 +1,26 @@
+{
+  "projectName": "AUREX",
+  "token": {
+    "address": "0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A",
+    "symbol": "AUREX",
+    "decimals": 18,
+    "network": "BSC",
+    "chainId": 56,
+    "explorer": "https://bscscan.com/token/0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A"
+  },
+  "dex": {
+    "pancakeSwapBuy": "https://pancakeswap.finance/swap?outputCurrency=0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A",
+    "dextoolsPair": "https://www.dextools.io/app/en/bnb/pair-explorer/0x98780009eea516909529056da749b77b93589134"
+  },
+  "socials": {
+    "telegram": "https://t.me/aurexcrypto",
+    "facebook": "https://www.facebook.com/AUREXcrypto",
+    "website": "https://example.github.io/aurex-project/"
+  },
+  "links": {
+    "bscscan": "https://bscscan.com/token/0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A",
+    "coingecko": "https://www.coingecko.com/en/coins/aurex",
+    "coinmarketcap": "https://coinmarketcap.com/currencies/aurex"
+  },
+  "updatedAt": "2025-09-18"
+}
