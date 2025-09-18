@@ -15,7 +15,7 @@
   "socials": {
     "telegram": "https://t.me/aurexcrypto",
     "facebook": "https://www.facebook.com/AUREXcrypto",
-    "website": "https://example.github.io/aurex-project/"
+    "website": "https://aurexproject-oss.github.io/aurex-project/"
   },
   "links": {
     "bscscan": "https://bscscan.com/token/0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A",
@@ -24,3 +24,4 @@
   },
   "updatedAt": "2025-09-18"
 }
+
