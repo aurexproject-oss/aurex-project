@@ -4,7 +4,7 @@
     "address": "0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A",
     "symbol": "AUREX",
     "decimals": 18,
-    "network": "BSC",
+    "network": "BNB Smart Chain",
     "chainId": 56,
     "explorer": "https://bscscan.com/token/0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A"
   },
