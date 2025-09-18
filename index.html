@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="sl">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AUREX — Uradna stran</title>
-  <meta name="description" content="AUREX BEP-20 žeton na BNB Smart Chain.">
-  <meta property="og:title" content="AUREX — BEP-20 žeton">
-  <meta property="og:description" content="Uradna predstavitev AUREX projekta: tokenomics, povezave, whitepaper.">
+  <title>AUREX — Official Website</title>
+  <meta name="description" content="AUREX BEP-20 Token on BNB Smart Chain">
+  <meta property="og:title" content="AUREX — BEP-20 Token">
+  <meta property="og:description" content="Official presentation of the AUREX project: tokenomics, links, whitepaper.">
   <meta property="og:image" content="assets/social-banner.png">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,15 +21,15 @@
       <span class="text-xl font-semibold tracking-wide">AUREX</span>
     </div>
     <nav class="hidden md:flex gap-6 text-sm">
-      <a href="#about" class="hover:underline">O projektu</a>
+      <a href="#about" class="hover:underline">About</a>
       <a href="#tokenomics" class="hover:underline">Tokenomics</a>
-      <a href="#howto" class="hover:underline">Nakup</a>
+      <a href="#howto" class="hover:underline">How to Buy</a>
       <a href="#whitepaper" class="hover:underline">Whitepaper</a>
-      <a href="#links" class="hover:underline">Povezave</a>
+      <a href="#links" class="hover:underline">Links</a>
     </nav>
     <div class="flex gap-2">
-      <button id="buyBtn" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600">Kupi na PancakeSwap</button>
-      <button id="addMetaMask" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600">Dodaj v MetaMask</button>
+      <button id="buyBtn" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600">Buy on PancakeSwap</button>
+      <button id="addMetaMask" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600">Add to MetaMask</button>
     </div>
   </header>
 
@@ -38,17 +38,17 @@
     <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/10 via-sky-500/10 to-transparent blur-3xl"></div>
     <div class="max-w-6xl mx-auto px-4 py-16">
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
-        AUREX — BEP-20 žeton na BNB Smart Chain
+        AUREX — BEP-20 Token on BNB Smart Chain
       </h1>
       <p class="mt-4 text-lg text-slate-300 max-w-2xl">
-        Transparenten, skupnosti usmerjen žeton. Spodaj najdeš pogodbo, par in uradne povezave.
+        A transparent, community-driven token. Below you will find the contract address, pair link, and official resources.
       </p>
       <div class="mt-6 space-y-2 text-slate-300">
-        <div>Naslov pogodbe:
+        <div>Contract Address:
           <code id="contractAddress" class="bg-slate-800 text-slate-100 px-2 py-1 rounded">0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A</code>
-          <button id="copyAddress" class="ml-2 text-xs px-2 py-1 rounded bg-slate-700 hover:bg-slate-600">kopiraj</button>
+          <button id="copyAddress" class="ml-2 text-xs px-2 py-1 rounded bg-slate-700 hover:bg-slate-600">copy</button>
         </div>
-        <div class="text-sm">Omrežje: BNB Smart Chain (chainId 56)</div>
+        <div class="text-sm">Network: BNB Smart Chain (chainId 56)</div>
       </div>
     </div>
   </section>
@@ -56,20 +56,21 @@
   <!-- About -->
   <section id="about" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
     <div>
-      <h2 class="text-2xl font-semibold mb-4">O projektu</h2>
+      <h2 class="text-2xl font-semibold mb-4">About the Project</h2>
       <p class="text-slate-300">
-        AUREX je eksperiment upravljanja skupnosti in likvidnosti. Cilj je zagotoviti jasne informacije,
-        varnostne prakse in pošten zagon. Ta stran je statična (GitHub Pages) in se napaja iz datoteke <code>config.json</code>
-        za hitre posodobitve naslova žetona in povezav brez spreminjanja kode.
+        AUREX is a community governance and liquidity experiment. The goal is to provide transparent information, 
+        secure practices, and a fair launch. 
+        This website is static (GitHub Pages) and powered by the <code>config.json</code> file, 
+        allowing quick updates to the token address and links without editing the HTML code.
       </p>
     </div>
     <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
-      <h3 class="font-semibold mb-2">Hitra dejstva</h3>
+      <h3 class="font-semibold mb-2">Quick Facts</h3>
       <ul class="list-disc ml-5 text-slate-300 space-y-1 text-sm">
         <li>Standard: BEP-20</li>
-        <li>Decimale: 18</li>
-        <li>Omrežje: BSC (56)</li>
-        <li><a id="bscLink" class="underline hover:no-underline" target="_blank" rel="noopener">Ogled na BscScan</a></li>
+        <li>Decimals: 18</li>
+        <li>Network: BSC (56)</li>
+        <li><a id="bscLink" class="underline hover:no-underline" target="_blank" rel="noopener">View on BscScan</a></li>
       </ul>
     </div>
   </section>
@@ -80,15 +81,15 @@
     <div class="grid md:grid-cols-3 gap-6">
       <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
         <div class="text-3xl font-bold">0%</div>
-        <div class="text-slate-400 text-sm">Nakup / prodaja davek (primer)</div>
-      </div>
-      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
-        <div class="text-3xl font-bold">100%</div>
-        <div class="text-slate-400 text-sm">Likvidnost zaklenjena (primer)</div>
+        <div class="text-slate-400 text-sm">Buy / Sell Tax</div>
       </div>
       <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
         <div class="text-3xl font-bold">1,000,000</div>
-        <div class="text-slate-400 text-sm">Skupna zaloga (primer)</div>
+        <div class="text-slate-400 text-sm">Total Supply</div>
+      </div>
+      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+        <div class="text-3xl font-bold">BNB Chain</div>
+        <div class="text-slate-400 text-sm">Network</div>
       </div>
     </div>
   </section>
@@ -96,20 +97,20 @@
   <!-- How to buy -->
   <section id="howto" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
     <div>
-      <h2 class="text-2xl font-semibold mb-4">Kako kupiti</h2>
+      <h2 class="text-2xl font-semibold mb-4">How to Buy</h2>
       <ol class="list-decimal ml-5 text-slate-300 space-y-2">
-        <li>Namesti MetaMask in izberi BNB Smart Chain (BSC).</li>
-        <li>Dodaj žeton z gumbom »Dodaj v MetaMask« ali ročno z naslovom.</li>
-        <li>Odpri PancakeSwap in zamenjaj BNB → AUREX.</li>
+        <li>Install MetaMask and select BNB Smart Chain (BSC).</li>
+        <li>Add the AUREX token using the "Add to MetaMask" button or manually with the contract address.</li>
+        <li>Open PancakeSwap and swap BNB → AUREX.</li>
       </ol>
       <div class="mt-4 flex gap-3">
         <a id="buyLink" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600">PancakeSwap</a>
-        <a id="dexTools" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700">DexTools par</a>
+        <a id="dexTools" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700">DexTools Pair</a>
       </div>
     </div>
     <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
-      <h3 class="font-semibold mb-2">Opozorilo</h3>
-      <p class="text-slate-300 text-sm">Kripto sredstva so volatilna. To ni finančni nasvet. Vedno opravi lastno raziskavo (DYOR).</p>
+      <h3 class="font-semibold mb-2">Disclaimer</h3>
+      <p class="text-slate-300 text-sm">Cryptocurrency assets are volatile. This is not financial advice. Always do your own research (DYOR).</p>
     </div>
   </section>
 
@@ -121,17 +122,17 @@
 
   <!-- Links -->
   <section id="links" class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-semibold mb-4">Uradne povezave</h2>
+    <h2 class="text-2xl font-semibold mb-4">Official Links</h2>
     <div class="grid md:grid-cols-2 gap-6">
       <a id="telegram" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Telegram</a>
       <a id="facebook" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Facebook</a>
-      <a id="website" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Web</a>
+      <a id="website" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Website</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="max-w-6xl mx-auto px-4 py-10 text-slate-500 text-sm">
-    © 2025 AUREX. Vse pravice pridržane.
+    © 2025 AUREX. All rights reserved.
   </footer>
 
   <script>
@@ -157,7 +158,7 @@
       // Add token to MetaMask
       document.getElementById('addMetaMask').onclick = async () => {
         if (!window.ethereum) {
-          alert('MetaMask ni zaznan.');
+          alert('MetaMask not detected.');
           return;
         }
         try {
@@ -173,7 +174,7 @@
             }
           });
         } catch (e) {
-          alert('Dodajanje v MetaMask ni uspelo.');
+          alert('Adding to MetaMask failed.');
         }
       };
     }
@@ -181,4 +182,5 @@
   </script>
 </body>
 </html>
+
 
