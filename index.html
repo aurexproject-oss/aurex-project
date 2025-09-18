@@ -1,23 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AUREX — Official Website</title>
-  <meta name="description" content="AUREX BEP-20 Token on BNB Smart Chain">
-  <meta property="og:title" content="AUREX — BEP-20 Token">
-  <meta property="og:description" content="Official presentation of the AUREX project: tokenomics, links, whitepaper.">
-  <meta property="og:image" content="assets/social-banner.png">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <meta name="description" content="AUREX BEP-20 Token on BNB Smart Chain" />
+  <meta property="og:title" content="AUREX — BEP-20 Token" />
+  <meta property="og:description" content="Official presentation of the AUREX project: tokenomics, links, whitepaper." />
+  <meta property="og:image" content="assets/social-banner.png" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-slate-950 text-white antialiased">
-
+<body class="bg-black text-[#EAEAEA] antialiased">
   <!-- Header -->
   <header class="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
     <div class="flex items-center gap-3">
-      <img src="assets/logo.svg" class="w-10 h-10" alt="AUREX logo">
+      <img src="assets/logo.svg" class="w-10 h-10" alt="AUREX logo" />
       <span class="text-xl font-semibold tracking-wide">AUREX</span>
     </div>
     <nav class="hidden md:flex gap-6 text-sm">
@@ -28,25 +27,31 @@
       <a href="#links" class="hover:underline">Links</a>
     </nav>
     <div class="flex gap-2">
-      <button id="buyBtn" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600">Buy on PancakeSwap</button>
-      <button id="addMetaMask" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600">Add to MetaMask</button>
+      <button id="buyBtn" class="px-4 py-2 rounded-xl bg-[#FFD700] text-black font-semibold hover:bg-[#B8860B] transition">
+        Buy on PancakeSwap
+      </button>
     </div>
   </header>
 
-  <!-- Hero section -->
+  <!-- Hero -->
   <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/10 via-sky-500/10 to-transparent blur-3xl"></div>
-    <div class="max-w-6xl mx-auto px-4 py-16">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#FFD700]/10 via-[#B8860B]/10 to-transparent blur-3xl"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-16">
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
         AUREX — BEP-20 Token on BNB Smart Chain
       </h1>
-      <p class="mt-4 text-lg text-slate-300 max-w-2xl">
+      <p class="mt-4 text-lg text-[#D6D6D6] max-w-2xl">
         A transparent, community-driven token. Below you will find the contract address, pair link, and official resources.
       </p>
-      <div class="mt-6 space-y-2 text-slate-300">
-        <div>Contract Address:
-          <code id="contractAddress" class="bg-slate-800 text-slate-100 px-2 py-1 rounded">0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A</code>
-          <button id="copyAddress" class="ml-2 text-xs px-2 py-1 rounded bg-slate-700 hover:bg-slate-600">copy</button>
+      <div class="mt-6 space-y-2 text-[#D6D6D6]">
+        <div>
+          Contract Address:
+          <code id="contractAddress" class="bg-[#111] text-[#EAEAEA] px-2 py-1 rounded border border-[#333]">
+            0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A
+          </code>
+          <button id="copyAddress" class="ml-2 text-xs px-2 py-1 rounded bg-[#1a1a1a] border border-[#333] hover:bg-[#222]">
+            copy
+          </button>
         </div>
         <div class="text-sm">Network: BNB Smart Chain (chainId 56)</div>
       </div>
@@ -56,40 +61,39 @@
   <!-- About -->
   <section id="about" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
     <div>
-      <h2 class="text-2xl font-semibold mb-4">About the Project</h2>
-      <p class="text-slate-300">
-        AUREX is a community governance and liquidity experiment. The goal is to provide transparent information, 
-        secure practices, and a fair launch. 
-        This website is static (GitHub Pages) and powered by the <code>config.json</code> file, 
-        allowing quick updates to the token address and links without editing the HTML code.
+      <h2 class="text-2xl font-semibold mb-4 text-[#FFD700]">About the Project</h2>
+      <p class="text-[#D6D6D6]">
+        AUREX is a community governance and liquidity experiment. The goal is to provide transparent information,
+        secure practices, and a fair launch. This website is static (GitHub Pages) and powered by the
+        <code>config.json</code> file, allowing quick updates to the token address and links without editing the HTML code.
       </p>
     </div>
-    <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+    <div class="bg-black/80 rounded-2xl p-6 border border-[#FFD700]">
       <h3 class="font-semibold mb-2">Quick Facts</h3>
-      <ul class="list-disc ml-5 text-slate-300 space-y-1 text-sm">
+      <ul class="list-disc ml-5 text-[#D6D6D6] space-y-1 text-sm">
         <li>Standard: BEP-20</li>
         <li>Decimals: 18</li>
         <li>Network: BSC (56)</li>
-        <li><a id="bscLink" class="underline hover:no-underline" target="_blank" rel="noopener">View on BscScan</a></li>
+        <li><a id="bscLink" class="underline hover:no-underline text-[#FFD700]" target="_blank" rel="noopener">View on BscScan</a></li>
       </ul>
     </div>
   </section>
 
   <!-- Tokenomics -->
   <section id="tokenomics" class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-semibold mb-4">Tokenomics</h2>
+    <h2 class="text-2xl font-semibold mb-4 text-[#FFD700]">Tokenomics</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
-        <div class="text-3xl font-bold">0%</div>
-        <div class="text-slate-400 text-sm">Buy / Sell Tax</div>
+      <div class="bg-black/90 rounded-2xl p-6 border border-[#FFD700]">
+        <div class="text-3xl font-bold text-[#FFD700]">0%</div>
+        <div class="text-[#C8C8C8] text-sm">Buy / Sell Tax</div>
       </div>
-      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
-        <div class="text-3xl font-bold">1,000,000</div>
-        <div class="text-slate-400 text-sm">Total Supply</div>
+      <div class="bg-black/90 rounded-2xl p-6 border border-[#FFD700]">
+        <div class="text-3xl font-bold text-[#FFD700]">1,000,000</div>
+        <div class="text-[#C8C8C8] text-sm">Total Supply</div>
       </div>
-      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
-        <div class="text-3xl font-bold">BNB Chain</div>
-        <div class="text-slate-400 text-sm">Network</div>
+      <div class="bg-black/90 rounded-2xl p-6 border border-[#FFD700]">
+        <div class="text-3xl font-bold text-[#FFD700]">BNB Chain</div>
+        <div class="text-[#C8C8C8] text-sm">Network</div>
       </div>
     </div>
   </section>
@@ -97,41 +101,49 @@
   <!-- How to buy -->
   <section id="howto" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
     <div>
-      <h2 class="text-2xl font-semibold mb-4">How to Buy</h2>
-      <ol class="list-decimal ml-5 text-slate-300 space-y-2">
-        <li>Install MetaMask and select BNB Smart Chain (BSC).</li>
-        <li>Add the AUREX token using the "Add to MetaMask" button or manually with the contract address.</li>
+      <h2 class="text-2xl font-semibold mb-4 text-[#FFD700]">How to Buy</h2>
+      <ol class="list-decimal ml-5 text-[#D6D6D6] space-y-2">
+        <li>Install a wallet (e.g., MetaMask) and select BNB Smart Chain (BSC).</li>
+        <li>Add the AUREX token using the contract address below.</li>
         <li>Open PancakeSwap and swap BNB → AUREX.</li>
       </ol>
       <div class="mt-4 flex gap-3">
-        <a id="buyLink" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600">PancakeSwap</a>
-        <a id="dexTools" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700">DexTools Pair</a>
+        <a id="buyLink" target="_blank" rel="noopener"
+           class="px-4 py-2 rounded-xl bg-[#FFD700] text-black font-semibold hover:bg-[#B8860B] transition">
+          PancakeSwap
+        </a>
+        <a id="dexTools" target="_blank" rel="noopener"
+           class="px-4 py-2 rounded-xl bg-[#0a0a0a] border border-[#FFD700] hover:bg-[#111]">
+          DexTools Pair
+        </a>
       </div>
     </div>
-    <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+    <div class="bg-black/80 rounded-2xl p-6 border border-[#FFD700]">
       <h3 class="font-semibold mb-2">Disclaimer</h3>
-      <p class="text-slate-300 text-sm">Cryptocurrency assets are volatile. This is not financial advice. Always do your own research (DYOR).</p>
+      <p class="text-sm text-[#D6D6D6]">
+        Cryptocurrency assets are volatile. This is not financial advice. Always do your own research (DYOR).
+      </p>
     </div>
   </section>
 
   <!-- Whitepaper -->
   <section id="whitepaper" class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-semibold mb-4">Whitepaper</h2>
-    <iframe src="Whitepaper.pdf" class="w-full h-[600px] rounded-xl border border-slate-800 bg-white"></iframe>
+    <h2 class="text-2xl font-semibold mb-4 text-[#FFD700]">Whitepaper</h2>
+    <iframe src="Whitepaper.pdf" class="w-full h-[600px] rounded-xl border border-[#FFD700] bg-white"></iframe>
   </section>
 
   <!-- Links -->
   <section id="links" class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-semibold mb-4">Official Links</h2>
+    <h2 class="text-2xl font-semibold mb-4 text-[#FFD700]">Official Links</h2>
     <div class="grid md:grid-cols-2 gap-6">
-      <a id="telegram" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Telegram</a>
-      <a id="facebook" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Facebook</a>
-      <a id="website" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Website</a>
+      <a id="telegram" class="block p-4 rounded-xl bg-black/80 border border-[#FFD700] hover:bg-black">Telegram</a>
+      <a id="facebook" class="block p-4 rounded-xl bg-black/80 border border-[#FFD700] hover:bg-black">Facebook</a>
+      <a id="website" class="block p-4 rounded-xl bg-black/80 border border-[#FFD700] hover:bg-black">Website</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="max-w-6xl mx-auto px-4 py-10 text-slate-500 text-sm">
+  <footer class="max-w-6xl mx-auto px-4 py-10 text-[#B3B3B3] text-sm">
     © 2025 AUREX. All rights reserved.
   </footer>
 
@@ -151,36 +163,11 @@
       document.getElementById('facebook').href = cfg.socials.facebook;
       document.getElementById('website').href = cfg.socials.website;
 
-      // Contract address
+      // Contract address + copy
       document.getElementById('contractAddress').textContent = cfg.token.address;
       document.getElementById('copyAddress').onclick = () => navigator.clipboard.writeText(cfg.token.address);
-
-      // Add token to MetaMask
-      document.getElementById('addMetaMask').onclick = async () => {
-        if (!window.ethereum) {
-          alert('MetaMask not detected.');
-          return;
-        }
-        try {
-          await window.ethereum.request({
-            method: 'wallet_watchAsset',
-            params: {
-              type: 'ERC20',
-              options: {
-                address: cfg.token.address,
-                symbol: cfg.token.symbol,
-                decimals: cfg.token.decimals
-              }
-            }
-          });
-        } catch (e) {
-          alert('Adding to MetaMask failed.');
-        }
-      };
     }
     loadConfig();
   </script>
 </body>
 </html>
-
-
