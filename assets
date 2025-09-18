@@ -1,9 +1,1 @@
-logo.svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#000000"/>
-  <g transform="translate(256,256)">
-    <circle cx="0" cy="0" r="120" fill="#FFD700"/>
-    <circle cx="0" cy="0" r="90" fill="#000000"/>
-    <path d="M-40 0 L0 -80 L40 0 L0 80 Z" fill="#FFD700"/>
-  </g>
-</svg>
+Remove incorrect assets file
