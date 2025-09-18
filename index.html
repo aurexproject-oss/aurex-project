@@ -7,8 +7,10 @@
   <meta name="description" content="AUREX BEP-20 Token on BNB Smart Chain" />
   <meta property="og:title" content="AUREX — BEP-20 Token" />
   <meta property="og:description" content="Official presentation of the AUREX project: tokenomics, links, whitepaper." />
-  <meta property="og:image" content="assets/social-banner.png" />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <!-- Social banner for sharing -->
+  <meta property="og:image" content="media/social-banner.png" />
+  <!-- Inline favicon (small logo for browser tab) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22><rect width=%2240%22 height=%2240%22 rx=%228%22 fill=%22%23000%22/><circle cx=%2220%22 cy=%2220%22 r=%2212%22 fill=%22%23FFD700%22/><path d=%22M20 10 L26 20 L20 30 L14 20 Z%22 fill=%22%23000%22/></svg>" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -16,7 +18,12 @@
   <!-- Header -->
   <header class="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
     <div class="flex items-center gap-3">
-      <img src="assets/logo.svg" class="w-10 h-10" alt="AUREX logo" />
+      <!-- INLINE LOGO -->
+      <svg class="w-12 h-12 rounded-lg ring-1 ring-[#FFD700]/40 shrink-0" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-label="AUREX logo" role="img">
+        <rect width="40" height="40" rx="8" fill="#000000"/>
+        <circle cx="20" cy="20" r="12" fill="#FFD700"/>
+        <path d="M20 10 L26 20 L20 30 L14 20 Z" fill="#000000"/>
+      </svg>
       <span class="text-xl font-semibold tracking-wide">AUREX</span>
     </div>
     <nav class="hidden md:flex gap-6 text-sm">
@@ -25,6 +32,7 @@
       <a href="#howto" class="hover:underline">How to Buy</a>
       <a href="#whitepaper" class="hover:underline">Whitepaper</a>
       <a href="#links" class="hover:underline">Links</a>
+      <a href="#readme" class="hover:underline">Repository Info</a>
     </nav>
     <div class="flex gap-2">
       <button id="buyBtn" class="px-4 py-2 rounded-xl bg-[#FFD700] text-black font-semibold hover:bg-[#B8860B] transition">
@@ -98,7 +106,7 @@
     </div>
   </section>
 
-  <!-- How to buy -->
+  <!-- How to Buy -->
   <section id="howto" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
     <div>
       <h2 class="text-2xl font-semibold mb-4 text-[#FFD700]">How to Buy</h2>
@@ -108,12 +116,10 @@
         <li>Open PancakeSwap and swap BNB → AUREX.</li>
       </ol>
       <div class="mt-4 flex gap-3">
-        <a id="buyLink" target="_blank" rel="noopener"
-           class="px-4 py-2 rounded-xl bg-[#FFD700] text-black font-semibold hover:bg-[#B8860B] transition">
+        <a id="buyLink" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-[#FFD700] text-black font-semibold hover:bg-[#B8860B] transition">
           PancakeSwap
         </a>
-        <a id="dexTools" target="_blank" rel="noopener"
-           class="px-4 py-2 rounded-xl bg-[#0a0a0a] border border-[#FFD700] hover:bg-[#111]">
+        <a id="dexTools" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-[#0a0a0a] border border-[#FFD700] hover:bg-[#111]">
           DexTools Pair
         </a>
       </div>
@@ -126,19 +132,13 @@
     </div>
   </section>
 
-  <!-- Whitepaper (as text) -->
+  <!-- Whitepaper -->
   <section id="whitepaper" class="max-w-6xl mx-auto px-4 py-12">
     <h2 class="text-2xl font-semibold mb-6 text-[#FFD700]">Whitepaper</h2>
     <div class="space-y-6 text-[#D6D6D6] leading-relaxed">
-      <p><strong>Introduction.</strong> AUREX is a community-driven cryptocurrency project built on the BNB Smart Chain (BEP-20).
-      Our mission is to create a transparent and secure ecosystem, giving the community meaningful influence over the project’s direction.</p>
-
-      <p><strong>Problem Statement.</strong> Many crypto projects lack transparency, include hidden fees, and fail to build sustainable communities.
-      This leads to uncertainty and mistrust among investors.</p>
-
-      <p><strong>Solution.</strong> AUREX addresses these issues with fair tokenomics, clear communication, and a community-governed approach.
-      The project is designed for long-term sustainability and adaptability.</p>
-
+      <p><strong>Introduction.</strong> AUREX is a community-driven cryptocurrency project built on the BNB Smart Chain (BEP-20). Our mission is to create a transparent and secure ecosystem, giving the community meaningful influence over the project’s direction.</p>
+      <p><strong>Problem Statement.</strong> Many crypto projects lack transparency, include hidden fees, and fail to build sustainable communities. This leads to uncertainty and mistrust among investors.</p>
+      <p><strong>Solution.</strong> AUREX addresses these issues with fair tokenomics, clear communication, and a community-governed approach. The project is designed for long-term sustainability and adaptability.</p>
       <div>
         <p class="font-semibold text-[#FFD700]">Tokenomics</p>
         <ul class="list-disc ml-6">
@@ -148,7 +148,6 @@
           <li>Network: BNB Smart Chain (BEP-20)</li>
         </ul>
       </div>
-
       <div>
         <p class="font-semibold text-[#FFD700]">Roadmap</p>
         <ol class="list-decimal ml-6">
@@ -157,13 +156,11 @@
           <li><strong>Phase 3:</strong> Partnerships and additional exchange listings.</li>
         </ol>
       </div>
-
-      <p><strong>Legal Disclaimer.</strong> The AUREX token is a community experiment and should not be considered financial advice.
-      Cryptocurrency investments are inherently risky — always do your own research (DYOR).</p>
+      <p><strong>Legal Disclaimer.</strong> The AUREX token is a community experiment and should not be considered financial advice. Cryptocurrency investments are inherently risky — always do your own research (DYOR).</p>
     </div>
   </section>
 
-  <!-- Links -->
+  <!-- Official Links -->
   <section id="links" class="max-w-6xl mx-auto px-4 py-12">
     <h2 class="text-2xl font-semibold mb-4 text-[#FFD700]">Official Links</h2>
     <div class="grid md:grid-cols-2 gap-6">
@@ -173,55 +170,61 @@
     </div>
   </section>
 
+  <!-- README Section -->
+  <section id="readme" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-6 text-[#FFD700]">Repository Info</h2>
+    <div class="space-y-4 text-[#D6D6D6]">
+      <p>This project contains the official static website for the AUREX token.</p>
+      <ul class="list-disc ml-6">
+        <li>Update token details in <code>config.json</code></li>
+        <li>No need to edit <code>index.html</code>, values are loaded dynamically.</li>
+        <li>Deploy via GitHub Pages: Settings → Pages → Branch: main → Save.</li>
+      </ul>
+      <p><strong>Disclaimer:</strong> The AUREX token is a community experiment and should not be considered financial advice.</p>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="max-w-6xl mx-auto px-4 py-10 text-[#B3B3B3] text-sm">
     © 2025 AUREX. All rights reserved.
   </footer>
 
+  <!-- JS: load config.json dynamically -->
   <script>
     async function loadConfig() {
       try {
         const res = await fetch('config.json', { cache: 'no-cache' });
         const cfg = await res.json();
 
-        // DEX links
-        const buyBtn = document.getElementById('buyBtn');
-        const buyLink = document.getElementById('buyLink');
-        const dexTools = document.getElementById('dexTools');
-
+        // Update dynamic links
         if (cfg?.dex?.pancakeSwapBuy) {
-          buyBtn.onclick = () => window.open(cfg.dex.pancakeSwapBuy, '_blank');
-          buyLink.href = cfg.dex.pancakeSwapBuy;
+          document.getElementById('buyBtn').onclick = () => window.open(cfg.dex.pancakeSwapBuy, '_blank');
+          document.getElementById('buyLink').href = cfg.dex.pancakeSwapBuy;
         }
         if (cfg?.dex?.dextoolsPair) {
-          dexTools.href = cfg.dex.dextoolsPair;
+          document.getElementById('dexTools').href = cfg.dex.dextoolsPair;
         }
 
-        // Explorer link
-        const bscLink = document.getElementById('bscLink');
+        // Explorer
         if (cfg?.token?.explorer) {
-          bscLink.href = cfg.token.explorer;
+          document.getElementById('bscLink').href = cfg.token.explorer;
         }
 
-        // Social links (hide if missing)
-        const socialMap = {
-          telegram: document.getElementById('telegram'),
-          facebook: document.getElementById('facebook'),
-          website: document.getElementById('website')
-        };
-
-        Object.entries(socialMap).forEach(([key, el]) => {
-          const url = cfg?.socials?.[key];
-          if (url && el) el.href = url;
-          else if (el) el.style.display = 'none';
+        // Social links
+        const socials = ['telegram', 'facebook', 'website'];
+        socials.forEach(id => {
+          const el = document.getElementById(id);
+          if (cfg?.socials?.[id]) el.href = cfg.socials[id];
+          else el.style.display = 'none';
         });
 
-        // Contract address + copy
-        const addr = cfg?.token?.address ?? '';
+        // Contract address
+        const addr = cfg?.token?.address || '';
         document.getElementById('contractAddress').textContent = addr;
         document.getElementById('copyAddress').onclick = () => navigator.clipboard.writeText(addr);
-      } catch (e) {
-        console.error('Failed to load config.json', e);
+
+      } catch (err) {
+        console.error('Failed to load config.json', err);
       }
     }
     loadConfig();
