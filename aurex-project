@@ -1,0 +1,326 @@
+{
+  "projectName": "AUREX",
+  "token": {
+    "address": "0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A",
+    "symbol": "AUREX",
+    "decimals": 18,
+    "network": "BSC",
+    "chainId": 56,
+    "explorer": "https://bscscan.com/token/0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A"
+  },
+  "dex": {
+    "pancakeSwapBuy": "https://pancakeswap.finance/swap?outputCurrency=0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A",
+    "dextoolsPair": "https://www.dextools.io/app/en/bnb/pair-explorer/0x98780009eea516909529056da749b77b93589134"
+  },
+  "socials": {
+    "telegram": "https://t.me/aurexcrypto",
+
+    "facebook":"https://www.facebook.com/AUREXcrypto",
+    "website": "https://example.github.io/aurex-project/"
+  },
+  "links": {
+    "bscscan": "https://bscscan.com/token/0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A",
+    "coingecko": "https://www.coingecko.com/en/coins/aurex",
+    "coinmarketcap": "https://coinmarketcap.com/currencies/aurex"
+  },
+  "updatedAt": "2025-09-18"
+}
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AUREX — Uradna stran</title>
+  <meta name="description" content="AUREX BEP-20 žeton na BNB Smart Chain.">
+  <meta property="og:title" content="AUREX — BEP-20 žeton">
+  <meta property="og:description" content="Uradna predstavitev AUREX projekta: tokenomics, povezave, whitepaper.">
+  <meta property="og:image" content="assets/social-banner.png">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+  <header class="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo.svg" class="w-10 h-10" alt="AUREX logo">
+      <span class="text-xl font-semibold tracking-wide">AUREX</span>
+    </div>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="#about" class="hover:underline">O projektu</a>
+      <a href="#tokenomics" class="hover:underline">Tokenomics</a>
+      <a href="#howto" class="hover:underline">Nakup</a>
+      <a href="#whitepaper" class="hover:underline">Whitepaper</a>
+      <a href="#links" class="hover:underline">Povezave</a>
+    </nav>
+    <div class="flex gap-2">
+      <button id="buyBtn" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600">Kupi na PancakeSwap</button>
+      <button id="addMetaMask" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600">Dodaj v MetaMask</button>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/10 via-sky-500/10 to-transparent blur-3xl"></div>
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+        AUREX — BEP-20 žeton na BNB Smart Chain
+      </h1>
+      <p class="mt-4 text-lg text-slate-300 max-w-2xl">
+        Transparenten, skupnosti usmerjen žeton. Spodaj najdeš pogodbo, par in uradne povezave.
+      </p>
+      <div class="mt-6 space-y-2 text-slate-300">
+        <div>Naslov pogodbe:
+          <code id="contractAddress" class="bg-slate-800 text-slate-100 px-2 py-1 rounded">0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A</code>
+          <button id="copyAddress" class="ml-2 text-xs px-2 py-1 rounded bg-slate-700 hover:bg-slate-600">kopiraj</button>
+        </div>
+        <div class="text-sm">Omrežje: BNB Smart Chain (chainId 56)</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
+    <div>
+      <h2 class="text-2xl font-semibold mb-4">O projektu</h2>
+      <p class="text-slate-300">
+        AUREX je eksperiment upravljanja skupnosti in likvidnosti. Cilj je zagotoviti jasne informacije,
+        varnostne prakse in pošten zagon. Ta stran je statična (GitHub Pages) in se napaja iz datoteke <code>config.json</code>
+        za hitre posodobitve naslova žetona in povezav brez spreminjanja kode.
+      </p>
+    </div>
+    <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+      <h3 class="font-semibold mb-2">Hitra dejstva</h3>
+      <ul class="list-disc ml-5 text-slate-300 space-y-1 text-sm">
+        <li>Standard: BEP-20</li>
+        <li>Decimale: 18</li>
+        <li>Omrežje: BSC (56)</li>
+        <li><a id="bscLink" class="underline hover:no-underline" target="_blank" rel="noopener">Ogled na BscScan</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="tokenomics" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-4">Tokenomics</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+        <div class="text-3xl font-bold">0%</div>
+        <div class="text-slate-400 text-sm">Nakup / prodaja davek (primer)</div>
+      </div>
+      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+        <div class="text-3xl font-bold">100%</div>
+        <div class="text-slate-400 text-sm">Likvidnost zaklenjena (primer)</div>
+      </div>
+      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+        <div class="text-3xl font-bold">1,000,000</div>
+        <div class="text-slate-400 text-sm">Skupna zaloga (primer)</div>
+      </div>
+    </div>
+    <p class="mt-4 text-slate-400 text-sm">Opomba: Spremeni vrednosti v whitepaperju in v besedilu po potrebi.</p>
+  </section>
+
+  <section id="howto" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
+    <div>
+      <h2 class="text-2xl font-semibold mb-4">Kako kupiti</h2>
+      <ol class="list-decimal ml-5 text-slate-300 space-y-2">
+        <li>Namesti MetaMask in izberi BNB Smart Chain (BSC).</li>
+        <li>Dodaj žeton z gumbom »Dodaj v MetaMask« ali ročno z naslovom.</li>
+        <li>Odpri PancakeSwap in zamenjaj BNB → AUREX.</li>
+      </ol>
+      <div class="mt-4 flex gap-3">
+        <a id="buyLink" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600">PancakeSwap</a>
+        <a id="dexTools" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700">DexTools par</a>
+      </div>
+    </div>
+    <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+      <h3 class="font-semibold mb-2">Opozorilo</h3>
+      <p class="text-slate-300 text-sm">Kripto sredstva so volatilna. To ni finančni nasvet. Vedno opravi lastno raziskavo (DYOR).</p>
+    </div>
+  </section>
+
+  <section id="whitepaper" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-4">Whitepaper</h2>
+    <p class="text-slate-300 mb-4">Prenesi PDF: <a href="Whitepaper.pdf" class="underline">Whitepaper.pdf</a></p>
+    <iframe src="Whitepaper.pdf" class="w-full h-[600px] rounded-xl border border-slate-800 bg-white"></iframe>
+  </section>
+
+  <section id="links" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-4">Uradne povezave</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a id="telegram" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Telegram</a>
+      <a id="twitter" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Twitter/X</a>
+      <a id="facebook" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Facebook</a>
+      <a id="website" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Web</a>
+    </div>
+  </section>
+
+  <footer class="max-w-6xl mx-auto px-4 py-10 text-slate-500 text-sm">
+    © 2025-09-18 AUREX. Vse pravice pridržane.
+  </footer>
+
+  <script>
+    async function loadConfig() {
+      const res = await fetch('config.json', { cache: 'no-cache' });
+      const cfg = await res.json();
+
+      document.getElementById('buyBtn').onclick = () => window.open(cfg.dex.pancakeSwapBuy, '_blank');
+      document.getElementById('buyLink').href = cfg.dex.pancakeSwapBuy;
+      document.getElementById('dexTools').href = cfg.dex.dextoolsPair;
+      document.getElementById('bscLink').href = cfg.token.explorer;
+
+      document.getElementById('telegram').href = cfg.socials.telegram;
+      
+      document.getElementById('facebook').href = cfg.socials.facebook;
+      document.getElementById('website').href = cfg.socials.website;
+
+      const addrEl = document.getElementById('contractAddress');
+      addrEl.textContent = cfg.token.address;
+
+      document.getElementById('copyAddress').onclick = () => navigator.clipboard.writeText(cfg.token.address);
+
+      document.getElementById('addMetaMask').onclick = async () => {
+        if (!window.ethereum) {
+          alert('MetaMask ni zaznan.');
+          return;
+        }
+        try {
+          await window.ethereum.request({
+            method: 'wallet_watchAsset',
+            params: {
+              type: 'ERC20',
+              options: {
+                address: cfg.token.address,
+                symbol: cfg.token.symbol,
+                decimals: cfg.token.decimals
+              }
+            }
+          });
+        } catch (e) {
+          console.error(e);
+          alert('Dodajanje v MetaMask ni uspelo.');
+        }
+      };
+    }
+    loadConfig();
+  </script>
+</body>
+</html>
+
+# AUREX — GitHub Pages
+
+Ta repozitorij vsebuje statično spletno stran projekta AUREX. Konfiguracija ključnih podatkov (naslov pogodbe, povezave) je v `config.json`, tako da lahko **posodobiš žeton** samo z zamenjavo vrednosti v tej datoteki.
+
+## Hitri začetek (GitHub Pages)
+1. Ustvari javni repozitorij (npr. `aurex-project`) in naloži vse datoteke iz te mape.
+2. V repozitoriju odpri **Settings → Pages** in kot *Branch* izberi `main`. Počakaj nekaj minut.
+3. Spletna stran bo na naslovu `https://<uporabnik>.github.io/aurex-project/`.
+
+## Kako posodobiti **token** in povezave
+V datoteki **config.json** spremeni:
+- `token.address` — naslov pogodbe (BEP-20) na BSC
+- `token.symbol`, `token.decimals` po potrebi
+- `dex.pancakeSwapBuy` — PancakeSwap URL (posodobi parametre)
+- `dex.dextoolsPair` — DexTools par
+- `links.bscscan` — povezava na BscScan
+- `socials.*` — uradne socialne povezave
+
+**Ni treba** spreminjati `index.html` — stran se ob nalaganju sama posodobi iz `config.json`.
+
+## Struktura
+```
+/
+├─ index.html
+├─ config.json
+├─ Whitepaper.pdf
+├─ assets/
+│  ├─ logo.svg
+│  └─ social-banner.png
+└─ .github/workflows/pages.yml  (CI za izgradnjo/objavo)
+```
+
+## Lokalni preizkus
+Za hiter test lahko zagnješ preprost http strežnik:
+```
+python3 -m http.server 8080
+```
+Nato odpri `http://localhost:8080`.
+
+## Pravna izjava
+To ni finančni nasvet. Kripto sredstva so tvegana. Vedno opravi lastno raziskavo (DYOR).
+
+%PDF-1.3
+%���� ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/BaseFont /ZapfDingbats /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+5 0 obj
+<<
+/Contents 9 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 8 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/PageMode /UseNone /Pages 8 0 R /Type /Catalog
+>>
+endobj
+7 0 obj
+<<
+/Author (anonymous) /CreationDate (D:20250918134011+00'00') /Creator (ReportLab PDF Library - www.reportlab.com) /Keywords () /ModDate (D:20250918134011+00'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (unspecified) /Title (AUREX Whitepaper) /Trapped /False
+>>
+endobj
+8 0 obj
+<<
+/Count 1 /Kids [ 5 0 R ] /Type /Pages
+>>
+endobj
+9 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 570
+>>
+stream
+Gat$t9lHd\&A@g>bV<6X'UoYsge'c+eZRW+ANpZ0-88"2^dc=0X8MfhfJ[TPH\mgmbWNX!o>VR(o-:h(WrV,^mZmp-KObO$kRA^2%ZBDFMbB020eP[Z`>_*&njX9Q&J4Ka3:n(d61=fnoAV^);F^.kWuTYlPO1`CKB144pA]15&p$5Br2:ih`^?^dU:XuUZ+m3o&spO"Q/NF1kJ(*FS"n_>;f56_"+N';j7c66I5:2@*#6p9rbk"_Jp?fB?o([uN5ukG)BjQciMAm,@(&M#+mm6%ZaB0eJrlI2?]fNPX_)';cL9&Dg6tK2jq_^\R,"bWR(T,E:5YO(EWTk\d\]nGh6PP\I9VJ7n^*^F!a!sIeY[=iD-7s=`]NM_>IiKqXe6DQOJ=>ULKUU4,'^o#1bC(6-=>.7r')ABB<,h\b&K%IieQQ=2OZ;s0FDe;B#/F4f!p\"rAi26Aa/FPN]G`nFuMLor&*X>P4m5,F37I9,pP&IqH05>Z)TW&7K.+:V0I;K&>e!u<p3M`M-[RB*b2uM[ACNUfTtm]RaLtXIqXJYfsKheqfDksjqS1dn3R~>endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000073 00000 n 
+0000000124 00000 n 
+0000000231 00000 n 
+0000000343 00000 n 
+0000000426 00000 n 
+0000000629 00000 n 
+0000000697 00000 n 
+0000001001 00000 n 
+0000001060 00000 n 
+trailer
+<<
+/ID 
+[<514b6332a9bf8f73a290a4fd7b5b4933><514b6332a9bf8f73a290a4fd7b5b4933>]
+% ReportLab generated PDF document -- digest (http://www.reportlab.com)
+
+/Info 7 0 R
+/Root 6 0 R
+/Size 10
+>>
+startxref
+1720
+%%EOF
