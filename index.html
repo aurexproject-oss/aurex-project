@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AUREX — Uradna stran</title>
+  <meta name="description" content="AUREX BEP-20 žeton na BNB Smart Chain.">
+  <meta property="og:title" content="AUREX — BEP-20 žeton">
+  <meta property="og:description" content="Uradna predstavitev AUREX projekta: tokenomics, povezave, whitepaper.">
+  <meta property="og:image" content="assets/social-banner.png">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-white antialiased">
+
+  <!-- Header -->
+  <header class="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo.svg" class="w-10 h-10" alt="AUREX logo">
+      <span class="text-xl font-semibold tracking-wide">AUREX</span>
+    </div>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="#about" class="hover:underline">O projektu</a>
+      <a href="#tokenomics" class="hover:underline">Tokenomics</a>
+      <a href="#howto" class="hover:underline">Nakup</a>
+      <a href="#whitepaper" class="hover:underline">Whitepaper</a>
+      <a href="#links" class="hover:underline">Povezave</a>
+    </nav>
+    <div class="flex gap-2">
+      <button id="buyBtn" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600">Kupi na PancakeSwap</button>
+      <button id="addMetaMask" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600">Dodaj v MetaMask</button>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/10 via-sky-500/10 to-transparent blur-3xl"></div>
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+        AUREX — BEP-20 žeton na BNB Smart Chain
+      </h1>
+      <p class="mt-4 text-lg text-slate-300 max-w-2xl">
+        Transparenten, skupnosti usmerjen žeton. Spodaj najdeš pogodbo, par in uradne povezave.
+      </p>
+      <div class="mt-6 space-y-2 text-slate-300">
+        <div>Naslov pogodbe:
+          <code id="contractAddress" class="bg-slate-800 text-slate-100 px-2 py-1 rounded">0x138cbcE528d1e9058BC6DE0575aF5c34b1faF72A</code>
+          <button id="copyAddress" class="ml-2 text-xs px-2 py-1 rounded bg-slate-700 hover:bg-slate-600">kopiraj</button>
+        </div>
+        <div class="text-sm">Omrežje: BNB Smart Chain (chainId 56)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
+    <div>
+      <h2 class="text-2xl font-semibold mb-4">O projektu</h2>
+      <p class="text-slate-300">
+        AUREX je eksperiment upravljanja skupnosti in likvidnosti. Cilj je zagotoviti jasne informacije,
+        varnostne prakse in pošten zagon. Ta stran je statična (GitHub Pages) in se napaja iz datoteke <code>config.json</code>
+        za hitre posodobitve naslova žetona in povezav brez spreminjanja kode.
+      </p>
+    </div>
+    <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+      <h3 class="font-semibold mb-2">Hitra dejstva</h3>
+      <ul class="list-disc ml-5 text-slate-300 space-y-1 text-sm">
+        <li>Standard: BEP-20</li>
+        <li>Decimale: 18</li>
+        <li>Omrežje: BSC (56)</li>
+        <li><a id="bscLink" class="underline hover:no-underline" target="_blank" rel="noopener">Ogled na BscScan</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Tokenomics -->
+  <section id="tokenomics" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-4">Tokenomics</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+        <div class="text-3xl font-bold">0%</div>
+        <div class="text-slate-400 text-sm">Nakup / prodaja davek (primer)</div>
+      </div>
+      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+        <div class="text-3xl font-bold">100%</div>
+        <div class="text-slate-400 text-sm">Likvidnost zaklenjena (primer)</div>
+      </div>
+      <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+        <div class="text-3xl font-bold">1,000,000</div>
+        <div class="text-slate-400 text-sm">Skupna zaloga (primer)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to buy -->
+  <section id="howto" class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8">
+    <div>
+      <h2 class="text-2xl font-semibold mb-4">Kako kupiti</h2>
+      <ol class="list-decimal ml-5 text-slate-300 space-y-2">
+        <li>Namest
