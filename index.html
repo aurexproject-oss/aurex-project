@@ -98,4 +98,87 @@
     <div>
       <h2 class="text-2xl font-semibold mb-4">Kako kupiti</h2>
       <ol class="list-decimal ml-5 text-slate-300 space-y-2">
-        <li>Namest
+        <li>Namesti MetaMask in izberi BNB Smart Chain (BSC).</li>
+        <li>Dodaj žeton z gumbom »Dodaj v MetaMask« ali ročno z naslovom.</li>
+        <li>Odpri PancakeSwap in zamenjaj BNB → AUREX.</li>
+      </ol>
+      <div class="mt-4 flex gap-3">
+        <a id="buyLink" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600">PancakeSwap</a>
+        <a id="dexTools" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700">DexTools par</a>
+      </div>
+    </div>
+    <div class="bg-slate-900/60 rounded-2xl p-6 border border-slate-800">
+      <h3 class="font-semibold mb-2">Opozorilo</h3>
+      <p class="text-slate-300 text-sm">Kripto sredstva so volatilna. To ni finančni nasvet. Vedno opravi lastno raziskavo (DYOR).</p>
+    </div>
+  </section>
+
+  <!-- Whitepaper -->
+  <section id="whitepaper" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-4">Whitepaper</h2>
+    <iframe src="Whitepaper.pdf" class="w-full h-[600px] rounded-xl border border-slate-800 bg-white"></iframe>
+  </section>
+
+  <!-- Links -->
+  <section id="links" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-4">Uradne povezave</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a id="telegram" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Telegram</a>
+      <a id="facebook" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Facebook</a>
+      <a id="website" class="block p-4 rounded-xl bg-slate-900/60 border border-slate-800 hover:bg-slate-900">Web</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="max-w-6xl mx-auto px-4 py-10 text-slate-500 text-sm">
+    © 2025 AUREX. Vse pravice pridržane.
+  </footer>
+
+  <script>
+    async function loadConfig() {
+      const res = await fetch('config.json', { cache: 'no-cache' });
+      const cfg = await res.json();
+
+      // DEX links
+      document.getElementById('buyBtn').onclick = () => window.open(cfg.dex.pancakeSwapBuy, '_blank');
+      document.getElementById('buyLink').href = cfg.dex.pancakeSwapBuy;
+      document.getElementById('dexTools').href = cfg.dex.dextoolsPair;
+      document.getElementById('bscLink').href = cfg.token.explorer;
+
+      // Social links
+      document.getElementById('telegram').href = cfg.socials.telegram;
+      document.getElementById('facebook').href = cfg.socials.facebook;
+      document.getElementById('website').href = cfg.socials.website;
+
+      // Contract address
+      document.getElementById('contractAddress').textContent = cfg.token.address;
+      document.getElementById('copyAddress').onclick = () => navigator.clipboard.writeText(cfg.token.address);
+
+      // Add token to MetaMask
+      document.getElementById('addMetaMask').onclick = async () => {
+        if (!window.ethereum) {
+          alert('MetaMask ni zaznan.');
+          return;
+        }
+        try {
+          await window.ethereum.request({
+            method: 'wallet_watchAsset',
+            params: {
+              type: 'ERC20',
+              options: {
+                address: cfg.token.address,
+                symbol: cfg.token.symbol,
+                decimals: cfg.token.decimals
+              }
+            }
+          });
+        } catch (e) {
+          alert('Dodajanje v MetaMask ni uspelo.');
+        }
+      };
+    }
+    loadConfig();
+  </script>
+</body>
+</html>
+
